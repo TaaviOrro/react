@@ -1,22 +1,17 @@
 import react from 'react'
 import ExpenseItem from './ExpenseItem';
+import Card from "./Card"
 import './Expenses.css'
 
 const Expenses = (props) => {
-  console.log(props)
 
-  return (
-    <div className="expenses">
-      {props.expenses.map((expense) => (
-        <ExpenseItem
-          key={expense.id}
-          title={expense.title}
-          amount={expense.amount}
-          date={expense.date}
-        />
-      ))}
-    </div>
+  return(
+    <Card className="expenses">
+      <ExpenseItem data={props.expenses[0]}/>
+      <ExpenseItem data={props.expenses[0]}/>
+    </Card>
   )
 }
+
 
 export default Expenses;
