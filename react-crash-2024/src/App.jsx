@@ -18,8 +18,12 @@ const App = () => {
 
   return (
     <div className="App">
-      <ExpenseItem data={expenses[0]}/>
-      <ExpenseItem data={expenses[1]}/>
+      <div className="Expenses">
+        {expenses.map((expense, index)=>(
+          <ExpenseItem key={index} expenseData={expense}/>
+        ))}
+
+      </div>
     </div>
   )
 }
