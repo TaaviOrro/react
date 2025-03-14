@@ -1,14 +1,16 @@
-import react from 'react'
-import ExpenseItem from './Expenses/ExpenseItem';
-import Card from "../UI/Card"
+import React from 'react'
+import ExpenseItem from './ExpenseItem';
+import Card from '../UI/Card'
 import './Expenses.css'
 
 const Expenses = (props) => {
 
+  const expenses = props.expenses || [];
   return(
     <Card className="expenses">
-      <ExpenseItem data={props.expenses[0]}/>
-      <ExpenseItem data={props.expenses[0]}/>
+            {expenses.map((expense, index) => (
+        <ExpenseItem key={index} expenseData={expense} />
+      ))}
     </Card>
   )
 }
